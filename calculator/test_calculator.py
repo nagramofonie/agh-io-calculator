@@ -26,22 +26,4 @@ class TestCalculator:
         calc = Calculator(3, 0)
 
         with pytest.raises(ZeroDivisionError):
-            calc.divide()
-
-'''
-(pythonproject) kasia@centos10:~/agh/io$ pytest -v
-================================================================================================== test session starts ==================================================================================================
-platform linux -- Python 3.14.8, pytest-9.2.0, pluggy-1.7.0 -- /home/kasia/agh/io/.venv/bin/python
-cachedir: .pytest_cache
-rootdir: /home/kasia/agh/io
-configfile: pyproject.toml
-collected 4 items                                                                                                                                                                                                       
-
-test_calculator.py::TestCalculator::test_sum PASSED                                                                                                                                                               [ 25%]
-test_calculator.py::TestCalculator::test_substract PASSED                                                                                                                                                         [ 50%]
-test_calculator.py::TestCalculator::test_multiply PASSED                                                                                                                                                          [ 75%]
-test_calculator.py::TestCalculator::test_devide PASSED                                                                                                                                                            [100%]
-
-=================================================================================================== 4 passed in 0.05s ===================================================================================================
-(pythonproject) kasia@centos10:~/agh/io$ 
-'''
+            assert calc.divide()
