@@ -1,4 +1,5 @@
 from calculator import Calculator
+import pytest
 
 #calc = Calculator(2, 0)
 #print(calc.devide())
@@ -9,17 +10,23 @@ class TestCalculator:
         calc = Calculator(1,3)
         assert calc.sum() == 4
 
-    def test_substract(self):
+    def test_subtract(self):
         calc = Calculator(3, 5)
-        assert calc.substract() == -2
+        assert calc.subtract() == -2
 
     def test_multiply(self):
         calc = Calculator(3, 5)
         assert calc.multiply() == 15
 
-    def test_devide(self):
+    def test_divide(self):
         calc = Calculator(3, 1)
-        assert calc.devide() == 3
+        assert calc.divide() == 3
+
+    def test_divide_by_zero(self):
+        calc = Calculator(3, 0)
+
+        with pytest.raises(ZeroDivisionError):
+            calc.divide()
 
 '''
 (pythonproject) kasia@centos10:~/agh/io$ pytest -v

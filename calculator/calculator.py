@@ -8,13 +8,13 @@ import math
    def sum(self):
        return self.op1 + self.op2
 
-   def substract(self):
+   def subtract(self):
        return self.op1 - self.op2
 
    def multiply(self):
        return self.op1 * self.op2
 
-   def devide(self):
+   def divide(self):
        if self.op2 == 0:
            return 0
 
@@ -28,15 +28,15 @@ class Calculator:
     def sum(self):
         return self.__op1 + self.__op2
 
-    def substract(self):
+    def subtract(self):
         return self.__op1 - self.__op2
 
     def multiply(self):
         return self.__op1 * self.__op2
 
-    def devide(self):
+    def divide(self):
         if self.__op2 == 0:
-            return "Error: Zero division"
+            raise ZeroDivisionError("Error: Zero division")
 
         return self.__op1 / self.__op2
 
